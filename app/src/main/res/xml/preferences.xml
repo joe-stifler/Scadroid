@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="User Settings">
+        <EditTextPreference
+            android:title="User"
+            android:key="username"
+            android:summary="Please, insert your user name">
+        </EditTextPreference>
+        <EditTextPreference
+            android:title="Password"
+            android:key="password"
+            android:password="true"
+            android:summary="Please, isert your password"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Server Settings">
+        <EditTextPreference
+            android:title="IP Address"
+            android:key="serverIp"
+            android:summary="Please, insert the server ip address">
+        </EditTextPreference>
+        <SwitchPreference
+            android:title="Syncronization datas with the server">
+        </SwitchPreference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Other Settings">
+        <RingtonePreference
+            android:title="Sound of alert">
+        </RingtonePreference>
+        <SwitchPreference
+            android:id="@+id/notifications"
+            android:title="Notifications">
+        </SwitchPreference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Server State">
+        <EditTextPreference
+            android:title="State"
+            android:textColor="@color/black"
+            android:key="serverState"
+            android:summary="No Connection!"
+            android:enabled="false">
+        </EditTextPreference>
+        <EditTextPreference
+            android:title="Init"
+            android:textColor="@color/black"
+            android:key="startTime"
+            android:summary="No Connection!"
+            android:enabled="false">
+        </EditTextPreference>
+        <EditTextPreference
+            android:title="Version"
+            android:textColor="@color/black"
+            android:key="productVersion"
+            android:summary="No Connection!"
+            android:enabled="false">
+        </EditTextPreference>
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.rey.material.widget.EditText
+        style="@style/Material.Widget.EditText"
+        android:id="@+id/custom_et_server_ip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:et_supportMode="charCounter"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:hint="IP Address"
+        android:textDirection="locale"
+        android:paddingTop="8dp"
+        android:inputType="textUri"/>
+
+    <com.rey.material.widget.EditText
+        style="@style/Material.Widget.EditText"
+        android:id="@+id/custom_et_name_server"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:et_supportMode="charCounter"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:hint="Name of Server"
+        android:textDirection="locale"
+        android:paddingTop="8dp"
+        android:inputType="textUri"/>
+
+    <com.rey.material.widget.EditText
+        style="@style/Material.Widget.EditText"
+        android:id="@+id/custom_et_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:et_supportMode="charCounter"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:hint="User"
+        android:textDirection="locale"
+        android:paddingTop="8dp"
+        android:inputType="text"/>
+
+    <com.rey.material.widget.EditText
+        style="@style/Material.Widget.EditText"
+        android:id="@+id/custom_et_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:et_supportMode="charCounter"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:hint="Password"
+        android:textDirection="locale"
+        android:paddingTop="8dp"
+        android:inputType="textPassword"/>
+
+    <com.rey.material.widget.CheckBox
+        style="@style/Material.Drawable.CheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show password"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/black"
+        android:gravity="center_vertical"
+        android:paddingLeft="24dp"
+        android:layout_marginTop="8dp"/>
+
+</LinearLayout>

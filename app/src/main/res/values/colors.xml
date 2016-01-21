@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="grey">#ddd</color>
+    <color name="black">#000</color>
+    <color name="white">#fff</color>
+
+    <color name="colorAccent">#8BC34A</color>
+    <color name="colorPrimary">#30b34b</color>
+    <color name="colorPrimaryDark">#F57C00</color>
+    <color name="colorPrimaryLight">#FFE0B2</color>
+    <color name="colorPrimarytext">#212121</color>
+    <color name="colorSecondText">#727272</color>
+    <color name="colorDivider">#ccc</color>
+
+    <color name="colorLink">#FFFFFF</color>
+
+    <color name="rb_checked">#FF4CAF50</color>
+    <color name="rb_unchecked">#FF6D6D6D</color>
+    <color name="rb_disable">#FFB0B0B0</color>
+    
+    <color name="tpi_checked">#FFFFFFFF</color>
+    <color name="tpi_unchecked">#99FFFFFF</color>
+
+    <color name="colorControlActivated">#FF03A9F4</color>
+    <color name="et_divider_focused">@color/colorControlActivated</color>
+    <color name="et_divider_not_focused">#FF6D6D6D</color>
+    <color name="et_divider_disable">#FFC1C1C1</color>
+    <color name="colorContextMenu">#616161</color>
+</resources>

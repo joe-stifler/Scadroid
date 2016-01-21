@@ -1,0 +1,166 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:orientation="vertical"
+    tools:context=".activities.PointHistoryActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:elevation="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_alignParentLeft="true"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="8dp"
+            android:id="@+id/relativeLayout">
+
+            <TextView
+                android:textSize="24sp"
+                android:id="@+id/tv_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Informations"
+                android:textColor="@color/colorSecondText"/>
+
+            <ImageView
+                android:id="@+id/setting"
+                android:src="@drawable/menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="6dp"
+                android:layout_below="@+id/tv_information"
+                android:background="@color/colorSecondText" />
+
+            <TextView
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/tv_period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Period:"
+                android:layout_below="@+id/divider"
+                android:textColor="@color/colorSecondText"/>
+
+            <com.rey.material.widget.Spinner
+                android:id="@+id/spinner_period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:popupBackground="@color/white"
+                style="@style/GalaxyZooThemeToolbarDarkOverflow"
+                app:spn_dividerColor="#FFD7D7D7"
+                app:spn_arrowColor="@color/black"
+                app:rd_delayClick="none"
+                android:layout_marginTop="2dp"
+                app:spn_labelEnable="true"
+                app:spn_arrowSwitchMode="true"
+                app:spn_arrowAnimDuration="@android:integer/config_shortAnimTime"
+                app:spn_arrowInterpolator="@android:anim/decelerate_interpolator"
+                android:clickable="true"
+                android:layout_above="@+id/tv_value_one"
+                android:layout_toRightOf="@+id/tv_period"
+                android:layout_toEndOf="@+id/tv_period" />
+
+            <TextView
+                android:textSize="16sp"
+                android:id="@+id/tv_value_one"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="null:"
+                android:textColor="@color/colorSecondText"
+                android:layout_below="@+id/tv_period"/>
+
+            <TextView
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/tv_value_field_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="insert"
+                android:layout_toRightOf="@+id/tv_value_one"
+                android:textColor="@color/colorSecondText"
+                android:layout_below="@+id/spinner_period"/>
+
+            <TextView
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/tv_value_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="null:"
+                android:layout_below="@+id/tv_value_one"
+                android:textColor="@color/colorSecondText"/>
+
+            <TextView
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/tv_value_field_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="insert"
+                android:layout_toRightOf="@+id/tv_value_two"
+                android:layout_below="@+id/tv_value_field_one"
+                android:textColor="@color/colorSecondText"/>
+
+            <TextView
+                android:textSize="16sp"
+                android:id="@+id/tv_value_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="null:"
+                android:textColor="@color/colorSecondText"
+                android:layout_below="@+id/tv_value_two"
+                android:layout_alignLeft="@+id/tv_value_two"
+                android:layout_alignStart="@+id/tv_value_two" />
+
+            <TextView
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/tv_value_field_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="insert"
+                android:layout_toRightOf="@+id/tv_value_three"
+                android:layout_below="@+id/tv_value_field_two"
+                android:textColor="@color/colorSecondText"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="3dp"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:layout_below="@+id/toolbar"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/linearLayout">
+        </LinearLayout>
+</LinearLayout>

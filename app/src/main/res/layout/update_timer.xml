@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.PointConfigActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/btn_height"
+        android:id="@+id/linearLayout4"
+        android:layout_alignRight="@+id/linearLayout"
+        android:layout_alignEnd="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:textSize="40sp"
+            android:id="@+id/tv_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/colorSecondText"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:textSize="15sp"
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="h"
+            android:textColor="@color/colorSecondText"
+            android:layout_toRightOf="@+id/tv_hour"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:textSize="40sp"
+            android:id="@+id/tv_minute_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_marginLeft="8dp"
+            android:textColor="@color/colorSecondText"
+            android:layout_toRightOf="@+id/textView9"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:textSize="40sp"
+            android:id="@+id/tv_minute_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/colorSecondText"
+            android:layout_toRightOf="@+id/tv_minute_2"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:textSize="15sp"
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="m"
+            android:textColor="@color/colorSecondText"
+            android:layout_toRightOf="@+id/tv_minute_1"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:textSize="40sp"
+            android:id="@+id/tv_second_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_marginLeft="8dp"
+            android:textColor="@color/colorSecondText"
+            android:layout_toRightOf="@+id/textView10"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:textSize="40sp"
+            android:id="@+id/tv_second_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/colorSecondText"
+            android:layout_toRightOf="@+id/tv_second_2"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:textSize="15sp"
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="s"
+            android:textColor="@color/colorSecondText"
+            android:layout_toRightOf="@+id/tv_second_1"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/colorSecondText"
+            android:layout_below="@+id/linearLayout4"
+            android:layout_alignRight="@+id/linearLayout6"
+            android:layout_alignEnd="@+id/linearLayout6" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout"
+        android:layout_below="@+id/linearLayout4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <com.rey.material.widget.Button
+            style="@style/RaiseWaveButtonRippleStyleUpdate"
+            android:id="@+id/iv1"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
+            android:text="1"
+            android:textSize="24sp"
+            android:textColor="@color/colorSecondText"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <com.rey.material.widget.Button
+            style="@style/RaiseWaveButtonRippleStyleUpdate"
+            android:id="@+id/iv2"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
+            android:text="2"
+            android:textSize="24sp"
+            android:textColor="@color/colorSecondText"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout2"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentLeft="true">
+
+        <com.rey.material.widget.Button
+            style="@style/RaiseWaveButtonRippleStyleUpdate"
+            android:id="@+id/iv4"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
+            android:layout_weight="0.4"
+            android:text="4"
+            android:textSize="24sp"
+            android:textColor="@color/colorSecondText"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <com.rey.material.widget.Button
+            style="@style/RaiseWaveButtonRippleStyleUpdate"
+            android:id="@+id/iv5"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
+            android:layout_weight="0.4"
+            android:text="5"
+            android:textSize="24sp"
+            android:textColor="@color/colorSecondText"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout3"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_alignParentLeft="true">
+
+        <com.rey.material.widget.Button
+            style="@style/RaiseWaveButtonRippleStyleUpdate"
+            android:id="@+id/iv7"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
+            android:layout_weight="0.4"
+            android:text="7"
+            android:textSize="24sp"
+            android:textColor="@color/colorSecondText"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <com.rey.material.widget.Button
+            style="@style/RaiseWaveButtonRippleStyleUpdate"
+            android:id="@+id/iv8"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
+            android:layout_weight="0.4"
+            android:text="8"
+            android:textSize="24sp"
+            android:textColor="@color/colorSecondText"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout5"
+        android:layout_below="@+id/linearLayout3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/linearLayout3"
+        android:layout_alignEnd="@+id/linearLayout3">
+
+        <com.rey.material.widget.Button
+            style="@style/RaiseWaveButtonRippleStyleUpdate"
+            android:id="@+id/iv0"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
+            android:text="0"
+            android:textSize="24sp"
+            android:textColor="@color/colorSecondText"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/linearLayout4"
+        android:id="@+id/linearLayout6"
+        android:layout_alignBottom="@+id/linearLayout3">
+
+        <com.rey.material.widget.ImageButton
+            style="@style/RaiseWaveButtonRippleStyleUpdate"
+            android:id="@+id/iv_delete"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
+            android:src="@drawable/ic_input_delete"/>
+
+
+        <com.rey.material.widget.Button
+            style="@style/RaiseWaveButtonRippleStyleUpdate"
+            android:id="@+id/iv3"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
+            android:text="3"
+            android:textSize="24sp"
+            android:textColor="@color/colorSecondText"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <com.rey.material.widget.Button
+            style="@style/RaiseWaveButtonRippleStyleUpdate"
+            android:id="@+id/iv6"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
+            android:text="6"
+            android:textSize="24sp"
+            android:textColor="@color/colorSecondText"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <com.rey.material.widget.Button
+            style="@style/RaiseWaveButtonRippleStyleUpdate"
+            android:id="@+id/iv9"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
+            android:text="9"
+            android:textSize="24sp"
+            android:textColor="@color/colorSecondText"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </LinearLayout>
+</RelativeLayout>

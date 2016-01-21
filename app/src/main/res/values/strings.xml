@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Scadroid</string>
+    <string name="app_history">History</string>
+    <string name="title_activity_point">Point Activity</string>
+    <string name="title_preference_activity">Preferences Settings</string>
+    <string name="advanced">Configurações</string>
+    <string name="history">Histórico</string>
+    <string name="remove">Remover</string>
+
+    <string name="title_tab_start_date">Start Date</string>
+    <string name="ttile_tab_end_date">End Date</string>
+    <string name="but_done">DONE</string>
+</resources>
