@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.scadroid">
+
+    <!-- Permission: Allow application to connect to Internet -->
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <!-- Permission: take screenshot from graphic view-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo_100"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppTheme">
+        <activity
+            android:name=".activities.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.HistoryActivity"
+            android:label="@string/title_activity_point">
+        </activity>
+        <activity
+            android:name=".activities.PointConfigActivity"
+            android:label="@string/title_activity_point">
+        </activity>
+        <activity
+            android:name=".activities.PointHistoryActivity"
+            android:label="@string/title_activity_point">
+        </activity>
+        <activity
+            android:name=".activities.PreferenceActivity"
+            android:label="@string/title_preference_activity"
+            android:screenOrientation="portrait">
+        </activity>
+    </application>
+
+</manifest>

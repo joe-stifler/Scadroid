@@ -1,0 +1,182 @@
+<html>
+<head>
+<title>MainActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(204,120,50); }
+.s1 { color: rgb(169,183,198); }
+.s2 { color: rgb(98,151,85); font-style: italic; }
+.s3 { color: rgb(106,135,89); }
+.s4 { color: rgb(128,128,128); }
+.s5 { color: rgb(104,151,187); }
+</style>
+</head>
+<BODY BGCOLOR="#2b2b2b">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+MainActivity.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0">package </span><span class="s1">com.scadroid.activities</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">import </span><span class="s1">android.content.ComponentName</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.content.ServiceConnection</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.os.Bundle</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.os.IBinder</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.support.v4.app.FragmentManager</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.support.v4.app.FragmentTransaction</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.support.v7.app.ActionBarActivity</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.support.v7.widget.Toolbar</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.util.Log</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.view.Gravity</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.view.View</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.widget.AdapterView</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.widget.CompoundButton</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.widget.Toast</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.content.Intent</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">java.util.List</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">java.util.Random</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">import </span><span class="s1">com.mikepenz.materialdrawer.Drawer</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">com.mikepenz.materialdrawer.Drawer.Result</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">com.mikepenz.materialdrawer.accountswitcher.AccountHeader</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">com.mikepenz.materialdrawer.model.PrimaryDrawerItem</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">com.mikepenz.materialdrawer.model.SectionDrawerItem</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">com.mikepenz.materialdrawer.model.SwitchDrawerItem</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">com.mikepenz.materialdrawer.model.interfaces.IDrawerItem</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">com.mikepenz.materialdrawer.model.interfaces.OnCheckedChangeListener</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">import </span><span class="s1">com.scadroid.R</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">com.scadroid.domain.Point</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">com.scadroid.fragments.PointFragment</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">com.software.shell.fab.ActionButton</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s2">/** 
+ * Created by joe on 16/05/15. 
+ */</span><span class="s1"> 
+ 
+</span><span class="s0">public class </span><span class="s1">MainActivity </span><span class="s0">extends </span><span class="s1">ActionBarActivity </span><span class="s0">implements </span><span class="s1">ServiceConnection { 
+ 
+    </span><span class="s0">private </span><span class="s1">Toolbar mToolbar</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Result navigationDrawer</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">AccountHeader.Result headerNavigationLeft</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">ActionButton fab</span><span class="s0">;</span><span class="s1"> 
+ 
+    FragmentManager fragmentManager = getSupportFragmentManager()</span><span class="s0">;</span><span class="s1"> 
+ 
+    </span><span class="s0">private </span><span class="s1">OnCheckedChangeListener aOnCheckedChaangeListener = </span><span class="s0">new </span><span class="s1">OnCheckedChangeListener(){ 
+ 
+        @Override 
+        </span><span class="s0">public void </span><span class="s1">onCheckedChanged(IDrawerItem iDrawerItem</span><span class="s0">, </span><span class="s1">CompoundButton compoundButton</span><span class="s0">, boolean </span><span class="s1">b) { 
+            Toast.makeText(MainActivity.</span><span class="s0">this, </span><span class="s3">&quot;onCheckedChanged: &quot;</span><span class="s1">+(b ? </span><span class="s3">&quot;true&quot; </span><span class="s1">: </span><span class="s3">&quot;false&quot;</span><span class="s1">)</span><span class="s0">, </span><span class="s1">Toast.LENGTH_SHORT).show()</span><span class="s0">;</span><span class="s1"> 
+        } 
+    }</span><span class="s0">;</span><span class="s1"> 
+ 
+    @Override 
+    </span><span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) { 
+        </span><span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span><span class="s0">;</span><span class="s1"> 
+        setContentView(R.layout.activity_main)</span><span class="s0">;</span><span class="s1"> 
+ 
+        </span><span class="s4">// creating Toolbar where it will stay the icon ic_launcher and navigation bar</span><span class="s1"> 
+            mToolbar = (Toolbar) findViewById(R.id.tb_main)</span><span class="s0">;</span><span class="s1"> 
+            mToolbar.setTitle(</span><span class="s3">&quot;ScaDroid&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+            mToolbar.setLogo(R.mipmap.ic_launcher)</span><span class="s0">;</span><span class="s1"> 
+ 
+        setSupportActionBar(mToolbar)</span><span class="s0">;</span><span class="s1"> 
+ 
+        </span><span class="s0">final </span><span class="s1">String tag = </span><span class="s3">&quot;mainFrag&quot;</span><span class="s0">;</span><span class="s1"> 
+ 
+        </span><span class="s4">// FRAGMENT</span><span class="s1"> 
+        </span><span class="s0">if</span><span class="s1">(savedInstanceState == </span><span class="s0">null</span><span class="s1">){ 
+            PointFragment frag1 = </span><span class="s0">new </span><span class="s1">PointFragment()</span><span class="s0">;</span><span class="s1"> 
+            FragmentTransaction ft = fragmentManager.beginTransaction()</span><span class="s0">;</span><span class="s1"> 
+            ft.add(R.id.rl_fragment_container</span><span class="s0">, </span><span class="s1">frag1</span><span class="s0">, </span><span class="s3">&quot;frag1&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+            ft.commit()</span><span class="s0">;</span><span class="s1"> 
+        } 
+ 
+        </span><span class="s4">// Navigation Drawer</span><span class="s1"> 
+        navigationDrawer = </span><span class="s0">new </span><span class="s1">Drawer() 
+                .withActivity(</span><span class="s0">this</span><span class="s1">) 
+                .withToolbar(mToolbar) 
+                .withDisplayBelowToolbar(</span><span class="s0">true</span><span class="s1">) 
+                .withActionBarDrawerToggleAnimated(</span><span class="s0">true</span><span class="s1">) 
+                .withDrawerGravity(Gravity.LEFT) 
+                .withSavedInstance(savedInstanceState) 
+                .withSelectedItem(</span><span class="s5">0</span><span class="s1">) 
+                .withFullscreen(</span><span class="s0">true</span><span class="s1">) 
+                .withActionBarDrawerToggle(</span><span class="s0">true</span><span class="s1">) 
+                .withOnDrawerNavigationListener(</span><span class="s0">new </span><span class="s1">Drawer.OnDrawerNavigationListener() { 
+                    @Override 
+                    </span><span class="s0">public boolean </span><span class="s1">onNavigationClickListener(View view) { 
+                        </span><span class="s0">return true;</span><span class="s1"> 
+                    } 
+                }) 
+                .withDrawerWidthPx(</span><span class="s5">800</span><span class="s1">)</span><span class="s4">// aqui é definido o tamanho da drawer</span><span class="s1"> 
+                .withOnDrawerItemClickListener(</span><span class="s0">new </span><span class="s1">Drawer.OnDrawerItemClickListener() { 
+ 
+                    @Override 
+                    </span><span class="s0">public void </span><span class="s1">onItemClick(AdapterView&lt;?&gt; adapterView</span><span class="s0">, </span><span class="s1">View view</span><span class="s0">, int </span><span class="s1">i</span><span class="s0">, long </span><span class="s1">l</span><span class="s0">, </span><span class="s1">IDrawerItem iDrawerItem) { 
+                        Toast.makeText(MainActivity.</span><span class="s0">this, </span><span class="s3">&quot;Olá Mundo! &quot;</span><span class="s1">+i</span><span class="s0">, </span><span class="s1">Toast.LENGTH_SHORT).show()</span><span class="s0">;</span><span class="s1"> 
+                    } 
+                }) 
+                .withOnDrawerItemLongClickListener(</span><span class="s0">new </span><span class="s1">Drawer.OnDrawerItemLongClickListener() { 
+                    @Override 
+                    </span><span class="s0">public boolean </span><span class="s1">onItemLongClick(AdapterView&lt;?&gt; adapterView</span><span class="s0">, </span><span class="s1">View view</span><span class="s0">, int </span><span class="s1">i</span><span class="s0">, long </span><span class="s1">l</span><span class="s0">, </span><span class="s1">IDrawerItem iDrawerItem) { 
+                        Toast.makeText(MainActivity.</span><span class="s0">this, </span><span class="s3">&quot;onItemLongClick: &quot;</span><span class="s1">+i</span><span class="s0">, </span><span class="s1">Toast.LENGTH_SHORT).show()</span><span class="s0">;</span><span class="s1"> 
+                        </span><span class="s0">return false;</span><span class="s1"> 
+                    } 
+                }) 
+                .build()</span><span class="s0">;</span><span class="s1"> 
+ 
+        </span><span class="s4">// Here is defined the arrow to come back of another activity</span><span class="s1"> 
+        </span><span class="s4">/*getSupportActionBar().setDisplayHomeAsUpEnabled(true); 
+        getSupportActionBar().setHomeButtonEnabled(false);*/</span><span class="s1"> 
+ 
+        navigationDrawer.addItem(</span><span class="s0">new </span><span class="s1">PrimaryDrawerItem().withName(</span><span class="s3">&quot;Pontos&quot;</span><span class="s1">).withIcon(getResources().getDrawable(R.drawable.abc_text_cursor_mtrl_alpha)))</span><span class="s0">;</span><span class="s1"> 
+        navigationDrawer.addItem(</span><span class="s0">new </span><span class="s1">PrimaryDrawerItem().withName(</span><span class="s3">&quot;Histórico&quot;</span><span class="s1">).withIcon(getResources().getDrawable(R.drawable.abc_text_cursor_mtrl_alpha)))</span><span class="s0">;</span><span class="s1"> 
+        navigationDrawer.addItem(</span><span class="s0">new </span><span class="s1">SectionDrawerItem().withName(</span><span class="s3">&quot;Configurações&quot;</span><span class="s1">))</span><span class="s0">;</span><span class="s1"> 
+        navigationDrawer.addItem(</span><span class="s0">new </span><span class="s1">SwitchDrawerItem().withName(</span><span class="s3">&quot;Notificação&quot;</span><span class="s1">).withChecked(</span><span class="s0">true</span><span class="s1">).withOnCheckedChangeListener(aOnCheckedChaangeListener))</span><span class="s0">;</span><span class="s1"> 
+        navigationDrawer.addItem(</span><span class="s0">new </span><span class="s1">PrimaryDrawerItem().withName(</span><span class="s3">&quot;Avançado&quot;</span><span class="s1">).withIcon(getResources().getDrawable(R.drawable.abc_text_cursor_mtrl_alpha)))</span><span class="s0">;</span><span class="s1"> 
+        navigationDrawer.addItem(</span><span class="s0">new </span><span class="s1">PrimaryDrawerItem().withName(</span><span class="s3">&quot;Sobre&quot;</span><span class="s1">).withIcon(getResources().getDrawable(R.drawable.abc_text_cursor_mtrl_alpha)))</span><span class="s0">;</span><span class="s1"> 
+ 
+        </span><span class="s4">// Here is added the SearchPoints to request the datas to server</span><span class="s1"> 
+        fab = (ActionButton) findViewById(R.id.fab)</span><span class="s0">;</span><span class="s1"> 
+        fab.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() { 
+            @Override 
+            </span><span class="s0">public void </span><span class="s1">onClick(View v) { 
+               </span><span class="s4">/* FragmentTransaction ft = fragmentManager.beginTransaction(); 
+ 
+                PointFragment frag1 = (PointFragment) fragmentManager.findFragmentByTag(&quot;frag1&quot;); 
+                ft.replace(R.id.rl_fragment_container, frag1, &quot;frag1&quot;); 
+ 
+                if(frag1 != null){ 
+                  frag1.addNewPoint(getPoint()); 
+                } 
+                else{ 
+                    Toast.makeText(MainActivity.this, &quot;Fragment 1 foi para o topo somente nessa tentativa, na próxima tentativa o texto será alterado.&quot;, Toast.LENGTH_LONG).show(); 
+                }*/</span><span class="s1"> 
+            } 
+        })</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public void </span><span class="s1">onServiceConnected(ComponentName name</span><span class="s0">, </span><span class="s1">IBinder service) { 
+        </span><span class="s4">// TODO Auto-generated method stub</span><span class="s1"> 
+        Controller c = (Controller) service</span><span class="s0">;</span><span class="s1"> 
+        cl = c.getCountListener()</span><span class="s0">;</span><span class="s1"> 
+        Log.i(</span><span class="s3">&quot;Script&quot;</span><span class="s0">, </span><span class="s3">&quot;onServiceConnected()&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public void </span><span class="s1">onServiceDisconnected(ComponentName name) { 
+        Log.i(</span><span class="s3">&quot;Script&quot;</span><span class="s0">, </span><span class="s3">&quot;onServiceDisconnected()&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+    } 
+} 
+</span></pre>
+</body>
+</html>

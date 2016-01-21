@@ -99,7 +99,7 @@ public class HistoryActivity extends ActionBarActivity{
         // creating Toolbar where it will stay the icon ic_launcher and navigation bar
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
         mToolbar.setTitle(R.string.app_name);
-        mToolbar.setLogo(R.drawable.logo_50);
+        mToolbar.setLogo(R.drawable.logo_2_50);
 
         setSupportActionBar(mToolbar);
 
