@@ -10,4 +10,4 @@ Technologies used:
 
 Below, some screenshots of the mobile app:
 
-![Alt text](screenshots.png?raw=true "Mobile APP Screenshots")
+![Alt text](images/screenshots.png?raw=true "Mobile APP Screenshots")
