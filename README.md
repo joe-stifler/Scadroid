@@ -1,7 +1,5 @@
 # Scadroid
 
-Open Source Android Application used to communicate with the open-source ScadaBR software and to provide smart devices status and graphical data about usage.
-
 Open Source Android Application developed in a party of three in 2014-2015 to a scientific initiation on the Information Technology Center (CTI), Campinas. The main objective of this project was to use obsolete computers in order to reuse them to control and monitor the IoT resourses in a house. That is, we boot those obsolete computers with an extremely light operating system (such as Linux Lubuntu), we installed Apache TomCat with ScadaBR on them, and we used the PC as a Database to control and monitor a residence. However, to easy things to the user, we developed a Android application used to communicate with the ScadaBR server through the usage of a Soap API. Therefore, we could manage the Iot devices in our house using our Android Applications from any place connected to the internet. All those details can be found on the [contribution to the ScadaBR forum](http://www.scadabr.com.br/index.php/2016/01/22/aplicativo-android-scadroid/) that we did.
 
 Technologies used:
