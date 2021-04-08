@@ -2,16 +2,14 @@
 
 Open Source Android Application used to communicate with the open-source ScadaBR software and to provide smart devices status and graphical data about usage.
 
-[Contribution to the ScadaBR forum](http://www.scadabr.com.br/index.php/2016/01/22/aplicativo-android-scadroid/).
+Open Source Android Application developed in a party of three in 2014-2015 to a scientific initiation on the Information Technology Center (CTI), Campinas. The main objective of this project was to use obsolete computers in order to reuse them to control and monitor the IoT resourses in a house. That is, we boot those obsolete computers with an extremely light operating system (such as Linux Lubuntu), we installed Apache TomCat with ScadaBR on them, and we used the PC as a Database to control and monitor a residence. However, to easy things to the user, we developed a Android application used to communicate with the ScadaBR server through the usage of a Soap API. Therefore, we could manage the Iot devices in our house using our Android Applications from any place connected to the internet. All those details can be found on the [contribution to the ScadaBR forum](http://www.scadabr.com.br/index.php/2016/01/22/aplicativo-android-scadroid/) that we did.
 
-Below, some images of the mobile app.
+Technologies used:
 
-![Alt text](images/mobile1.png?raw=true "Mobile APP - Screenshot 1")
-![Alt text](images/mobile2.png?raw=true "Mobile APP - Screenshot 2")
-![Alt text](images/mobile3.png?raw=true "Mobile APP - Screenshot 3")
-![Alt text](images/mobile4.png?raw=true "Mobile APP - Screenshot 4")
-![Alt text](images/mobile5.png?raw=true "Mobile APP - Screenshot 5")
-![Alt text](images/mobile6.png?raw=true "Mobile APP - Screenshot 6")
-![Alt text](images/mobile7.png?raw=true "Mobile APP - Screenshot 7")
-![Alt text](images/scadabr.png?raw=true "ScadaBR - Screenshot 8")
+* We used **Arduino** to control **IoT devices** in our house. Also, we used **ModBus Protocol** to allow Arduino and ScadaBR to communicate.
+* We used **KSOAP2** library to establish the connection between our Android App and the **Apache TomCat + ScadaBR server**. Some details regarding the ScadaBR API can be found [here](https://sites.google.com/a/certi.org.br/certi_scadabr/home/minicursos/scadabr).
+* [MPAndroidChart](https://github.com/PhilJay/MPAndroidChart) to develop the Charts of resource usage on the Android Application.
 
+Below, some screenshots of the mobile app:
+
+![Alt text](screenshots.png?raw=true "Mobile APP Screenshots")
